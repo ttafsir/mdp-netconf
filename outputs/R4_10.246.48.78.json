@@ -38,7 +38,7 @@
           "disable-kernel-core": "true"
         }
       },
-      "hostname": "R5",
+      "hostname": "R4",
       "username": {
         "name": "wwt",
         "privilege": "15",
@@ -84,12 +84,20 @@
         },
         "http": {
           "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-http",
-          "server": "false",
+          "authentication": {
+            "local": null
+          },
+          "server": "true",
           "secure-server": "true"
         }
       },
       "ipv6": {
         "unicast-routing": null
+      },
+      "cdp": {
+        "run": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-cdp"
+        }
       },
       "interface": {
         "GigabitEthernet": [
@@ -99,7 +107,7 @@
             "ip": {
               "address": {
                 "primary": {
-                  "address": "172.16.1.175",
+                  "address": "172.16.1.174",
                   "mask": "255.255.255.0"
                 }
               }
@@ -127,7 +135,7 @@
             "ip": {
               "address": {
                 "primary": {
-                  "address": "169.254.100.5",
+                  "address": "169.254.100.4",
                   "mask": "255.255.255.0"
                 }
               }
@@ -135,7 +143,7 @@
             "ipv6": {
               "address": {
                 "prefix-list": {
-                  "prefix": "2001:169:254:100::5/64"
+                  "prefix": "2001:169:254:100::4/64"
                 }
               }
             },
@@ -187,7 +195,7 @@
           "ip": {
             "address": {
               "primary": {
-                "address": "150.1.5.5",
+                "address": "150.1.4.4",
                 "mask": "255.255.255.255"
               }
             }
@@ -195,7 +203,7 @@
           "ipv6": {
             "address": {
               "prefix-list": {
-                "prefix": "2001:150:5:5::5/128"
+                "prefix": "2001:150:4:4::4/128"
               }
             }
           }
@@ -263,7 +271,7 @@
                 }
               },
               {
-                "name": "TP-self-signed-3797683674",
+                "name": "TP-self-signed-1940850591",
                 "certificate": {
                   "serial": "01",
                   "certtype": "self-signed"
@@ -280,12 +288,12 @@
               "revocation-check": "crl"
             },
             {
-              "id": "TP-self-signed-3797683674",
+              "id": "TP-self-signed-1940850591",
               "enrollment": {
                 "selfsigned": null
               },
               "revocation-check": "none",
-              "subject-name": "cn=IOS-Self-Signed-Certificate-3797683674"
+              "subject-name": "cn=IOS-Self-Signed-Certificate-1940850591"
             }
           ]
         }
@@ -293,34 +301,17 @@
       "license": {
         "udi": {
           "pid": "CSR1000V",
-          "sn": "96XP3VK1WKU"
+          "sn": "9998MIHE4VA"
         }
       },
       "line": {
         "console": {
           "first": "0",
-          "exec-timeout": {
-            "minutes": "0",
-            "seconds": "0"
-          },
-          "logging": {
-            "synchronous": null
-          },
-          "privilege": {
-            "level": {
-              "number": "15"
-            }
-          },
           "stopbits": "1"
         },
         "vty": {
           "first": "0",
-          "last": "4",
-          "privilege": {
-            "level": {
-              "number": "15"
-            }
-          }
+          "last": "4"
         }
       },
       "diagnostic": {
@@ -393,9 +384,9 @@
                   "@xmlns": "http://openconfig.net/yang/interfaces/ip",
                   "addresses": {
                     "address": {
-                      "ip": "172.16.1.175",
+                      "ip": "172.16.1.174",
                       "config": {
-                        "ip": "172.16.1.175",
+                        "ip": "172.16.1.174",
                         "prefix-length": "24"
                       }
                     }
@@ -412,7 +403,7 @@
             "ethernet": {
               "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
               "config": {
-                "mac-address": "50:00:00:05:00:00",
+                "mac-address": "50:00:00:0e:00:00",
                 "auto-negotiate": "true",
                 "enable-flow-control": "true"
               }
@@ -439,9 +430,9 @@
                   "@xmlns": "http://openconfig.net/yang/interfaces/ip",
                   "addresses": {
                     "address": {
-                      "ip": "169.254.100.5",
+                      "ip": "169.254.100.4",
                       "config": {
-                        "ip": "169.254.100.5",
+                        "ip": "169.254.100.4",
                         "prefix-length": "24"
                       }
                     }
@@ -451,9 +442,9 @@
                   "@xmlns": "http://openconfig.net/yang/interfaces/ip",
                   "addresses": {
                     "address": {
-                      "ip": "2001:169:254:100::5",
+                      "ip": "2001:169:254:100::4",
                       "config": {
-                        "ip": "2001:169:254:100::5",
+                        "ip": "2001:169:254:100::4",
                         "prefix-length": "64"
                       }
                     }
@@ -467,7 +458,7 @@
             "ethernet": {
               "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
               "config": {
-                "mac-address": "50:00:00:05:00:01",
+                "mac-address": "50:00:00:0e:00:01",
                 "auto-negotiate": "true",
                 "enable-flow-control": "true"
               }
@@ -501,7 +492,7 @@
             "ethernet": {
               "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
               "config": {
-                "mac-address": "50:00:00:05:00:02",
+                "mac-address": "50:00:00:0e:00:02",
                 "auto-negotiate": "true",
                 "enable-flow-control": "true"
               }
@@ -535,7 +526,7 @@
             "ethernet": {
               "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
               "config": {
-                "mac-address": "50:00:00:05:00:03",
+                "mac-address": "50:00:00:0e:00:03",
                 "auto-negotiate": "true",
                 "enable-flow-control": "true"
               }
@@ -562,9 +553,9 @@
                   "@xmlns": "http://openconfig.net/yang/interfaces/ip",
                   "addresses": {
                     "address": {
-                      "ip": "150.1.5.5",
+                      "ip": "150.1.4.4",
                       "config": {
-                        "ip": "150.1.5.5",
+                        "ip": "150.1.4.4",
                         "prefix-length": "32"
                       }
                     }
@@ -574,9 +565,9 @@
                   "@xmlns": "http://openconfig.net/yang/interfaces/ip",
                   "addresses": {
                     "address": {
-                      "ip": "2001:150:5:5::5",
+                      "ip": "2001:150:4:4::4",
                       "config": {
-                        "ip": "2001:150:5:5::5",
+                        "ip": "2001:150:4:4::4",
                         "prefix-length": "128"
                       }
                     }
@@ -604,7 +595,7 @@
             "ipv4": {
               "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip",
               "address": {
-                "ip": "172.16.1.175",
+                "ip": "172.16.1.174",
                 "netmask": "255.255.255.0"
               }
             },
@@ -622,14 +613,14 @@
             "ipv4": {
               "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip",
               "address": {
-                "ip": "169.254.100.5",
+                "ip": "169.254.100.4",
                 "netmask": "255.255.255.0"
               }
             },
             "ipv6": {
               "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip",
               "address": {
-                "ip": "2001:169:254:100::5",
+                "ip": "2001:169:254:100::4",
                 "prefix-length": "64"
               }
             }
@@ -672,14 +663,14 @@
             "ipv4": {
               "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip",
               "address": {
-                "ip": "150.1.5.5",
+                "ip": "150.1.4.4",
                 "netmask": "255.255.255.255"
               }
             },
             "ipv6": {
               "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip",
               "address": {
-                "ip": "2001:150:5:5::5",
+                "ip": "2001:150:4:4::4",
                 "prefix-length": "128"
               }
             }

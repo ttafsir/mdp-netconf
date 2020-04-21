@@ -40,10 +40,10 @@ def build_hostvars(hostname):
     return _vars
 
 
-def build_bgp(bgp_data: dict ) -> dict:
+def build_bgp(bgp_data):
     """
-    Returns YANG-structured dict that for Cisco
-    IOS-XE native YANG data model
+    Returns YANG-structured dict for BGP modules in the Cisco
+    IOS-XE native YANG data model.
     """
 
     bgp = {
@@ -53,8 +53,16 @@ def build_bgp(bgp_data: dict ) -> dict:
     return bgp
 
 
-def build_interface(intf_data: dict) -> dict:
+def build_interface(intf_list):
+    """
+    Returns YANG-structured dict for interface modules in the Cisco
+    IOS-XE native YANG data model.
+    """
     pass
+    # nc_interface = {
+    #     "interface": intf_list
+    # }
+    # return nc_interface
 
 
 def build_xml_payload(host_vars):
@@ -76,9 +84,8 @@ def build_xml_payload(host_vars):
     }
 
     if (interface_data := host_vars.get('interface')) is not None:
-        interface_content = build_interface(interface_data)
         payload_shell['config']['native'].update(
-            {"interface": interface_content}
+            {"interface": interface_data}
         )
 
     if (bgp_data := host_vars.get('router_bgp')) is not None:

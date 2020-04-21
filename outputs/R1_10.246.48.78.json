@@ -103,7 +103,7 @@
         "GigabitEthernet": [
           {
             "name": "1",
-            "description": "Management Interface",
+            "description": "MGMT",
             "ip": {
               "address": {
                 "primary": {
@@ -132,7 +132,6 @@
           },
           {
             "name": "2",
-            "description": "WAN interface",
             "ip": {
               "address": {
                 "primary": {
@@ -272,7 +271,7 @@
                 }
               },
               {
-                "name": "TP-self-signed-1528597666",
+                "name": "TP-self-signed-2568855728",
                 "certificate": {
                   "serial": "01",
                   "certtype": "self-signed"
@@ -289,33 +288,20 @@
               "revocation-check": "crl"
             },
             {
-              "id": "TP-self-signed-1528597666",
+              "id": "TP-self-signed-2568855728",
               "enrollment": {
                 "selfsigned": null
               },
               "revocation-check": "none",
-              "subject-name": "cn=IOS-Self-Signed-Certificate-1528597666"
+              "subject-name": "cn=IOS-Self-Signed-Certificate-2568855728"
             }
           ]
-        }
-      },
-      "router": {
-        "bgp": {
-          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-bgp",
-          "id": "65001",
-          "bgp": {
-            "log-neighbor-changes": "true"
-          },
-          "neighbor": {
-            "id": "169.254.100.5",
-            "remote-as": "65000"
-          }
         }
       },
       "license": {
         "udi": {
           "pid": "CSR1000V",
-          "sn": "9B0VNIMBENV"
+          "sn": "9A8ZHP01UER"
         }
       },
       "line": {
@@ -383,7 +369,7 @@
                 "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
                 "#text": "ianaift:ethernetCsmacd"
               },
-              "description": "Management Interface",
+              "description": "MGMT",
               "enabled": "true"
             },
             "subinterfaces": {
@@ -391,7 +377,7 @@
                 "index": "0",
                 "config": {
                   "index": "0",
-                  "description": "Management Interface",
+                  "description": "MGMT",
                   "enabled": "true"
                 },
                 "ipv4": {
@@ -431,7 +417,6 @@
                 "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
                 "#text": "ianaift:ethernetCsmacd"
               },
-              "description": "WAN interface",
               "enabled": "true"
             },
             "subinterfaces": {
@@ -439,7 +424,6 @@
                 "index": "0",
                 "config": {
                   "index": "0",
-                  "description": "WAN interface",
                   "enabled": "true"
                 },
                 "ipv4": {
@@ -602,7 +586,7 @@
         "interface": [
           {
             "name": "GigabitEthernet1",
-            "description": "Management Interface",
+            "description": "MGMT",
             "type": {
               "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
               "#text": "ianaift:ethernetCsmacd"
@@ -621,7 +605,6 @@
           },
           {
             "name": "GigabitEthernet2",
-            "description": "WAN interface",
             "type": {
               "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
               "#text": "ianaift:ethernetCsmacd"
@@ -831,58 +814,6 @@
         },
         "protocols": {
           "protocol": [
-            {
-              "identifier": {
-                "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
-                "#text": "oc-pol-types:BGP"
-              },
-              "name": "65001",
-              "config": {
-                "identifier": {
-                  "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
-                  "#text": "oc-pol-types:BGP"
-                },
-                "name": "65001"
-              },
-              "bgp": {
-                "global": {
-                  "config": {
-                    "as": "65001"
-                  },
-                  "graceful-restart": {
-                    "config": {
-                      "enabled": "false"
-                    }
-                  },
-                  "route-selection-options": {
-                    "config": {
-                      "always-compare-med": "false",
-                      "external-compare-router-id": "false"
-                    }
-                  }
-                },
-                "neighbors": {
-                  "neighbor": {
-                    "neighbor-address": "169.254.100.5",
-                    "config": {
-                      "neighbor-address": "169.254.100.5",
-                      "peer-as": "65000"
-                    },
-                    "timers": {
-                      "config": {
-                        "hold-time": "180.0",
-                        "keepalive-interval": "60.0"
-                      }
-                    },
-                    "ebgp-multihop": {
-                      "config": {
-                        "enabled": "false"
-                      }
-                    }
-                  }
-                }
-              }
-            },
             {
               "identifier": {
                 "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",

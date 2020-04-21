@@ -29,7 +29,7 @@ def backup_config(conn, device, hostname):
 
     Returns: None
     """
-    # <get-config> rpc operation to device for the 'running' datastore
+    # Get the running configuration and extra the 'data' xml
     resp = conn.get_config('running').data_xml
 
     # load xml data as OrderedDict
@@ -74,6 +74,10 @@ def main():
 
         except SSHError:
             print('status: SSH transport error')
+            continue
+
+        except Exception as e:
+            print(f'status: {str(e)}')
             continue
 
 
