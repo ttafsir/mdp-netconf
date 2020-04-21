@@ -1,0 +1,30 @@
+---
+all:
+  children:
+    hub:
+      hosts:
+        R5:
+          ansible_host: 10.246.48.78
+          ansible_port: 2275
+          netconf_port: 875
+    spoke:
+      hosts:
+        R1:
+          ansible_host: 10.246.48.78
+          ansible_port: 2271
+          netconf_port: 871
+        R2:
+          ansible_host: 10.246.48.78
+          ansible_port: 2272
+          netconf_port: 872
+        R3:
+          ansible_host: 10.246.48.78
+          ansible_port: 2273
+          netconf_port: 873
+        R4:
+          ansible_host: 10.246.48.78
+          ansible_port: 2274
+          netconf_port: 874
+      vars:
+        device_params:
+          - name: csr

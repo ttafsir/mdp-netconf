@@ -1,0 +1,41 @@
+---
+
+interface:
+  GigabitEthernet:
+    - name: 1
+      description: Management Interface
+      ip:
+        address:
+          primary:
+            address: 172.16.1.173
+            mask: 255.255.255.0
+      cdp:
+        "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-cdp"
+        enable: "true"
+
+    - name: 2
+      description: "WAN interface"
+      ip:
+        address:
+          primary:
+            address: 169.254.100.2
+            mask: 255.255.255.0
+      ipv6:
+        address:
+          prefix-list:
+            prefix: '2001:169:254:100::3/64'
+      cdp:
+        "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-cdp"
+        "enable": "true"
+
+  Loopback:
+    - name: 0
+      ip:
+        address:
+          primary:
+            address: 155.1.3.3
+            mask: 255.255.255.255
+      ipv6:
+        address:
+          prefix-list:
+            prefix: '2001:150:3:3::3/128'

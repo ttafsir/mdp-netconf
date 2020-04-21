@@ -1,0 +1,9 @@
+---
+
+router_bgp:
+  id: 65001
+  bgp:
+    log-neighbor-changes: true
+  neighbor:
+    id: 169.254.100.5
+    remote-as: 65000

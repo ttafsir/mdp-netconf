@@ -1,0 +1,24 @@
+---
+device_role: spoke
+
+interfaces:
+  config:
+    - name: GigabitEthernet1
+      description: 'Management Interface'
+      enabled: True
+    - name: GigabitEthernet2
+      description: 'WAN interface'
+      enabled: True
+  state: merged
+
+
+bgp:
+  config:
+    bgp_as: 65001
+    log_neighbor_changes: True
+    neighbors:
+      - neighbor: 169.254.100.5
+        remote_as: 65000
+  operation: merge
+
+...

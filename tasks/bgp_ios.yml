@@ -1,0 +1,6 @@
+---
+
+- name: configure BGP
+  ios_bgp:
+    config: "{{ bgp.config }}"
+    operation: "merge"

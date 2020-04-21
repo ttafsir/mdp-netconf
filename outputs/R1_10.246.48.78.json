@@ -1,0 +1,978 @@
+{
+  "data": {
+    "@xmlns": "urn:ietf:params:xml:ns:netconf:base:1.0",
+    "@xmlns:nc": "urn:ietf:params:xml:ns:netconf:base:1.0",
+    "native": {
+      "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-native",
+      "version": "16.12",
+      "boot-start-marker": null,
+      "boot-end-marker": null,
+      "memory": {
+        "free": {
+          "low-watermark": {
+            "processor": "72342"
+          }
+        }
+      },
+      "call-home": {
+        "contact-email-addr": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-call-home",
+          "#text": "sch-smart-licensing@cisco.com"
+        },
+        "profile": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-call-home",
+          "profile-name": "CiscoTAC-1",
+          "active": "true"
+        }
+      },
+      "service": {
+        "call-home": null
+      },
+      "platform": {
+        "console": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-platform",
+          "output": "serial"
+        },
+        "punt-keepalive": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-platform",
+          "disable-kernel-core": "true"
+        }
+      },
+      "hostname": "R1",
+      "username": {
+        "name": "wwt",
+        "privilege": "15",
+        "password": {
+          "encryption": "0",
+          "password": "WWTwwt1!"
+        }
+      },
+      "ip": {
+        "domain": {
+          "lookup": "false",
+          "name": "wwtatc.local"
+        },
+        "forward-protocol": {
+          "protocol": "nd"
+        },
+        "multicast": {
+          "route-limit": {
+            "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-multicast",
+            "#text": "2147483647"
+          }
+        },
+        "pim": {
+          "autorp-container": {
+            "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-multicast",
+            "autorp": "false"
+          }
+        },
+        "route": {
+          "ip-route-interface-forwarding-list": {
+            "prefix": "0.0.0.0",
+            "mask": "0.0.0.0",
+            "fwd-list": {
+              "fwd": "172.16.1.254"
+            }
+          }
+        },
+        "access-list": {
+          "extended": {
+            "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-acl",
+            "name": "meraki-fqdn-dns"
+          }
+        },
+        "http": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-http",
+          "authentication": {
+            "local": null
+          },
+          "server": "true",
+          "secure-server": "true"
+        }
+      },
+      "ipv6": {
+        "unicast-routing": null
+      },
+      "cdp": {
+        "run": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-cdp"
+        }
+      },
+      "interface": {
+        "GigabitEthernet": [
+          {
+            "name": "1",
+            "description": "Management Interface",
+            "ip": {
+              "address": {
+                "primary": {
+                  "address": "172.16.1.171",
+                  "mask": "255.255.255.0"
+                }
+              }
+            },
+            "mop": {
+              "enabled": "false",
+              "sysid": "false"
+            },
+            "cdp": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-cdp",
+              "enable": "true",
+              "tlv": {
+                "app": null,
+                "server-location": null,
+                "location": null
+              }
+            },
+            "negotiation": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet",
+              "auto": "true"
+            }
+          },
+          {
+            "name": "2",
+            "description": "WAN interface",
+            "ip": {
+              "address": {
+                "primary": {
+                  "address": "169.254.100.1",
+                  "mask": "255.255.255.0"
+                }
+              }
+            },
+            "ipv6": {
+              "address": {
+                "prefix-list": {
+                  "prefix": "2001:169:254:100::1/64"
+                }
+              }
+            },
+            "mop": {
+              "enabled": "false",
+              "sysid": "false"
+            },
+            "cdp": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-cdp",
+              "enable": "true",
+              "tlv": {
+                "app": null,
+                "server-location": null,
+                "location": null
+              }
+            },
+            "negotiation": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet",
+              "auto": "true"
+            }
+          },
+          {
+            "name": "3",
+            "shutdown": null,
+            "mop": {
+              "enabled": "false",
+              "sysid": "false"
+            },
+            "negotiation": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet",
+              "auto": "true"
+            }
+          },
+          {
+            "name": "4",
+            "shutdown": null,
+            "mop": {
+              "enabled": "false",
+              "sysid": "false"
+            },
+            "negotiation": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet",
+              "auto": "true"
+            }
+          }
+        ],
+        "Loopback": {
+          "name": "0",
+          "ip": {
+            "address": {
+              "primary": {
+                "address": "150.1.1.1",
+                "mask": "255.255.255.255"
+              }
+            }
+          },
+          "ipv6": {
+            "address": {
+              "prefix-list": {
+                "prefix": "2001:150:1:1::1/128"
+              }
+            }
+          }
+        }
+      },
+      "control-plane": null,
+      "aaa": {
+        "new-model": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-aaa"
+        },
+        "authentication": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-aaa",
+          "login": {
+            "name": "default",
+            "a1": {
+              "local": null
+            }
+          }
+        },
+        "authorization": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-aaa",
+          "exec": {
+            "name": "default",
+            "a1": {
+              "local": null
+            }
+          }
+        },
+        "session-id": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-aaa",
+          "#text": "common"
+        }
+      },
+      "login": {
+        "on-success": {
+          "log": null
+        }
+      },
+      "multilink": {
+        "bundle-name": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-ppp",
+          "#text": "authenticated"
+        }
+      },
+      "redundancy": null,
+      "spanning-tree": {
+        "extend": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-spanning-tree",
+          "system-id": null
+        }
+      },
+      "subscriber": {
+        "templating": null
+      },
+      "crypto": {
+        "pki": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-crypto",
+          "certificate": {
+            "chain": [
+              {
+                "name": "SLA-TrustPoint",
+                "certificate": {
+                  "serial": "01",
+                  "certtype": "ca"
+                }
+              },
+              {
+                "name": "TP-self-signed-1528597666",
+                "certificate": {
+                  "serial": "01",
+                  "certtype": "self-signed"
+                }
+              }
+            ]
+          },
+          "trustpoint": [
+            {
+              "id": "SLA-TrustPoint",
+              "enrollment": {
+                "pkcs12": null
+              },
+              "revocation-check": "crl"
+            },
+            {
+              "id": "TP-self-signed-1528597666",
+              "enrollment": {
+                "selfsigned": null
+              },
+              "revocation-check": "none",
+              "subject-name": "cn=IOS-Self-Signed-Certificate-1528597666"
+            }
+          ]
+        }
+      },
+      "router": {
+        "bgp": {
+          "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-bgp",
+          "id": "65001",
+          "bgp": {
+            "log-neighbor-changes": "true"
+          },
+          "neighbor": {
+            "id": "169.254.100.5",
+            "remote-as": "65000"
+          }
+        }
+      },
+      "license": {
+        "udi": {
+          "pid": "CSR1000V",
+          "sn": "9B0VNIMBENV"
+        }
+      },
+      "line": {
+        "console": {
+          "first": "0",
+          "stopbits": "1"
+        },
+        "vty": {
+          "first": "0",
+          "last": "4"
+        }
+      },
+      "diagnostic": {
+        "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XE-diagnostics",
+        "bootup": {
+          "level": "minimal"
+        }
+      }
+    },
+    "licensing": {
+      "@xmlns": "http://cisco.com/ns/yang/cisco-smart-license",
+      "config": {
+        "enable": "false",
+        "privacy": {
+          "hostname": "false",
+          "version": "false"
+        },
+        "utility": {
+          "utility-enable": "false"
+        }
+      }
+    },
+    "netconf-yang": {
+      "@xmlns": "http://cisco.com/yang/cisco-self-mgmt",
+      "cisco-ia": {
+        "@xmlns": "http://cisco.com/yang/cisco-ia",
+        "snmp-trap-control": {
+          "global-forwarding": "true"
+        },
+        "snmp-community-string": "private"
+      }
+    },
+    "acl": {
+      "@xmlns": "http://openconfig.net/yang/acl",
+      "acl-sets": {
+        "acl-set": {
+          "name": "meraki-fqdn-dns",
+          "type": "ACL_IPV4",
+          "config": {
+            "name": "meraki-fqdn-dns",
+            "type": "ACL_IPV4"
+          }
+        }
+      }
+    },
+    "interfaces": [
+      {
+        "@xmlns": "http://openconfig.net/yang/interfaces",
+        "interface": [
+          {
+            "name": "GigabitEthernet1",
+            "config": {
+              "name": "GigabitEthernet1",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              },
+              "description": "Management Interface",
+              "enabled": "true"
+            },
+            "subinterfaces": {
+              "subinterface": {
+                "index": "0",
+                "config": {
+                  "index": "0",
+                  "description": "Management Interface",
+                  "enabled": "true"
+                },
+                "ipv4": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                  "addresses": {
+                    "address": {
+                      "ip": "172.16.1.171",
+                      "config": {
+                        "ip": "172.16.1.171",
+                        "prefix-length": "24"
+                      }
+                    }
+                  }
+                },
+                "ipv6": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                  "config": {
+                    "enabled": "false"
+                  }
+                }
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "mac-address": "50:00:00:0b:00:00",
+                "auto-negotiate": "true",
+                "enable-flow-control": "true"
+              }
+            }
+          },
+          {
+            "name": "GigabitEthernet2",
+            "config": {
+              "name": "GigabitEthernet2",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              },
+              "description": "WAN interface",
+              "enabled": "true"
+            },
+            "subinterfaces": {
+              "subinterface": {
+                "index": "0",
+                "config": {
+                  "index": "0",
+                  "description": "WAN interface",
+                  "enabled": "true"
+                },
+                "ipv4": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                  "addresses": {
+                    "address": {
+                      "ip": "169.254.100.1",
+                      "config": {
+                        "ip": "169.254.100.1",
+                        "prefix-length": "24"
+                      }
+                    }
+                  }
+                },
+                "ipv6": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                  "addresses": {
+                    "address": {
+                      "ip": "2001:169:254:100::1",
+                      "config": {
+                        "ip": "2001:169:254:100::1",
+                        "prefix-length": "64"
+                      }
+                    }
+                  },
+                  "config": {
+                    "enabled": "false"
+                  }
+                }
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "mac-address": "50:00:00:0b:00:01",
+                "auto-negotiate": "true",
+                "enable-flow-control": "true"
+              }
+            }
+          },
+          {
+            "name": "GigabitEthernet3",
+            "config": {
+              "name": "GigabitEthernet3",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              },
+              "enabled": "false"
+            },
+            "subinterfaces": {
+              "subinterface": {
+                "index": "0",
+                "config": {
+                  "index": "0",
+                  "enabled": "false"
+                },
+                "ipv6": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                  "config": {
+                    "enabled": "false"
+                  }
+                }
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "mac-address": "50:00:00:0b:00:02",
+                "auto-negotiate": "true",
+                "enable-flow-control": "true"
+              }
+            }
+          },
+          {
+            "name": "GigabitEthernet4",
+            "config": {
+              "name": "GigabitEthernet4",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              },
+              "enabled": "false"
+            },
+            "subinterfaces": {
+              "subinterface": {
+                "index": "0",
+                "config": {
+                  "index": "0",
+                  "enabled": "false"
+                },
+                "ipv6": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                  "config": {
+                    "enabled": "false"
+                  }
+                }
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "mac-address": "50:00:00:0b:00:03",
+                "auto-negotiate": "true",
+                "enable-flow-control": "true"
+              }
+            }
+          },
+          {
+            "name": "Loopback0",
+            "config": {
+              "name": "Loopback0",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:softwareLoopback"
+              },
+              "enabled": "true"
+            },
+            "subinterfaces": {
+              "subinterface": {
+                "index": "0",
+                "config": {
+                  "index": "0",
+                  "enabled": "true"
+                },
+                "ipv4": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                  "addresses": {
+                    "address": {
+                      "ip": "150.1.1.1",
+                      "config": {
+                        "ip": "150.1.1.1",
+                        "prefix-length": "32"
+                      }
+                    }
+                  }
+                },
+                "ipv6": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                  "addresses": {
+                    "address": {
+                      "ip": "2001:150:1:1::1",
+                      "config": {
+                        "ip": "2001:150:1:1::1",
+                        "prefix-length": "128"
+                      }
+                    }
+                  },
+                  "config": {
+                    "enabled": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-interfaces",
+        "interface": [
+          {
+            "name": "GigabitEthernet1",
+            "description": "Management Interface",
+            "type": {
+              "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+              "#text": "ianaift:ethernetCsmacd"
+            },
+            "enabled": "true",
+            "ipv4": {
+              "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip",
+              "address": {
+                "ip": "172.16.1.171",
+                "netmask": "255.255.255.0"
+              }
+            },
+            "ipv6": {
+              "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip"
+            }
+          },
+          {
+            "name": "GigabitEthernet2",
+            "description": "WAN interface",
+            "type": {
+              "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+              "#text": "ianaift:ethernetCsmacd"
+            },
+            "enabled": "true",
+            "ipv4": {
+              "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip",
+              "address": {
+                "ip": "169.254.100.1",
+                "netmask": "255.255.255.0"
+              }
+            },
+            "ipv6": {
+              "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip",
+              "address": {
+                "ip": "2001:169:254:100::1",
+                "prefix-length": "64"
+              }
+            }
+          },
+          {
+            "name": "GigabitEthernet3",
+            "type": {
+              "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+              "#text": "ianaift:ethernetCsmacd"
+            },
+            "enabled": "false",
+            "ipv4": {
+              "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip"
+            },
+            "ipv6": {
+              "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip"
+            }
+          },
+          {
+            "name": "GigabitEthernet4",
+            "type": {
+              "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+              "#text": "ianaift:ethernetCsmacd"
+            },
+            "enabled": "false",
+            "ipv4": {
+              "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip"
+            },
+            "ipv6": {
+              "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip"
+            }
+          },
+          {
+            "name": "Loopback0",
+            "type": {
+              "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+              "#text": "ianaift:softwareLoopback"
+            },
+            "enabled": "true",
+            "ipv4": {
+              "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip",
+              "address": {
+                "ip": "150.1.1.1",
+                "netmask": "255.255.255.255"
+              }
+            },
+            "ipv6": {
+              "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ip",
+              "address": {
+                "ip": "2001:150:1:1::1",
+                "prefix-length": "128"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "lldp": {
+      "@xmlns": "http://openconfig.net/yang/lldp",
+      "config": {
+        "enabled": "false"
+      },
+      "interfaces": {
+        "interface": [
+          {
+            "name": "GigabitEthernet1",
+            "config": {
+              "name": "GigabitEthernet1",
+              "enabled": "true"
+            }
+          },
+          {
+            "name": "GigabitEthernet2",
+            "config": {
+              "name": "GigabitEthernet2",
+              "enabled": "true"
+            }
+          },
+          {
+            "name": "GigabitEthernet3",
+            "config": {
+              "name": "GigabitEthernet3",
+              "enabled": "true"
+            }
+          },
+          {
+            "name": "GigabitEthernet4",
+            "config": {
+              "name": "GigabitEthernet4",
+              "enabled": "true"
+            }
+          }
+        ]
+      }
+    },
+    "network-instances": {
+      "@xmlns": "http://openconfig.net/yang/network-instance",
+      "network-instance": {
+        "name": "default",
+        "config": {
+          "name": "default",
+          "type": {
+            "@xmlns:oc-ni-types": "http://openconfig.net/yang/network-instance-types",
+            "#text": "oc-ni-types:DEFAULT_INSTANCE"
+          },
+          "description": "default-vrf [read-only]"
+        },
+        "tables": {
+          "table": [
+            {
+              "protocol": {
+                "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                "#text": "oc-pol-types:DIRECTLY_CONNECTED"
+              },
+              "address-family": {
+                "@xmlns:oc-types": "http://openconfig.net/yang/openconfig-types",
+                "#text": "oc-types:IPV4"
+              },
+              "config": {
+                "protocol": {
+                  "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                  "#text": "oc-pol-types:DIRECTLY_CONNECTED"
+                },
+                "address-family": {
+                  "@xmlns:oc-types": "http://openconfig.net/yang/openconfig-types",
+                  "#text": "oc-types:IPV4"
+                }
+              }
+            },
+            {
+              "protocol": {
+                "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                "#text": "oc-pol-types:DIRECTLY_CONNECTED"
+              },
+              "address-family": {
+                "@xmlns:oc-types": "http://openconfig.net/yang/openconfig-types",
+                "#text": "oc-types:IPV6"
+              },
+              "config": {
+                "protocol": {
+                  "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                  "#text": "oc-pol-types:DIRECTLY_CONNECTED"
+                },
+                "address-family": {
+                  "@xmlns:oc-types": "http://openconfig.net/yang/openconfig-types",
+                  "#text": "oc-types:IPV6"
+                }
+              }
+            },
+            {
+              "protocol": {
+                "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                "#text": "oc-pol-types:STATIC"
+              },
+              "address-family": {
+                "@xmlns:oc-types": "http://openconfig.net/yang/openconfig-types",
+                "#text": "oc-types:IPV4"
+              },
+              "config": {
+                "protocol": {
+                  "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                  "#text": "oc-pol-types:STATIC"
+                },
+                "address-family": {
+                  "@xmlns:oc-types": "http://openconfig.net/yang/openconfig-types",
+                  "#text": "oc-types:IPV4"
+                }
+              }
+            },
+            {
+              "protocol": {
+                "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                "#text": "oc-pol-types:STATIC"
+              },
+              "address-family": {
+                "@xmlns:oc-types": "http://openconfig.net/yang/openconfig-types",
+                "#text": "oc-types:IPV6"
+              },
+              "config": {
+                "protocol": {
+                  "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                  "#text": "oc-pol-types:STATIC"
+                },
+                "address-family": {
+                  "@xmlns:oc-types": "http://openconfig.net/yang/openconfig-types",
+                  "#text": "oc-types:IPV6"
+                }
+              }
+            }
+          ]
+        },
+        "protocols": {
+          "protocol": [
+            {
+              "identifier": {
+                "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                "#text": "oc-pol-types:BGP"
+              },
+              "name": "65001",
+              "config": {
+                "identifier": {
+                  "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                  "#text": "oc-pol-types:BGP"
+                },
+                "name": "65001"
+              },
+              "bgp": {
+                "global": {
+                  "config": {
+                    "as": "65001"
+                  },
+                  "graceful-restart": {
+                    "config": {
+                      "enabled": "false"
+                    }
+                  },
+                  "route-selection-options": {
+                    "config": {
+                      "always-compare-med": "false",
+                      "external-compare-router-id": "false"
+                    }
+                  }
+                },
+                "neighbors": {
+                  "neighbor": {
+                    "neighbor-address": "169.254.100.5",
+                    "config": {
+                      "neighbor-address": "169.254.100.5",
+                      "peer-as": "65000"
+                    },
+                    "timers": {
+                      "config": {
+                        "hold-time": "180.0",
+                        "keepalive-interval": "60.0"
+                      }
+                    },
+                    "ebgp-multihop": {
+                      "config": {
+                        "enabled": "false"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "identifier": {
+                "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                "#text": "oc-pol-types:STATIC"
+              },
+              "name": "DEFAULT",
+              "config": {
+                "identifier": {
+                  "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                  "#text": "oc-pol-types:STATIC"
+                },
+                "name": "DEFAULT"
+              },
+              "static-routes": {
+                "static": {
+                  "prefix": "0.0.0.0/0",
+                  "config": {
+                    "prefix": "0.0.0.0/0"
+                  },
+                  "next-hops": {
+                    "next-hop": {
+                      "index": "172.16.1.254",
+                      "config": {
+                        "index": "172.16.1.254",
+                        "next-hop": "172.16.1.254"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "identifier": {
+                "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                "#text": "oc-pol-types:DIRECTLY_CONNECTED"
+              },
+              "name": "DEFAULT",
+              "config": {
+                "identifier": {
+                  "@xmlns:oc-pol-types": "http://openconfig.net/yang/policy-types",
+                  "#text": "oc-pol-types:DIRECTLY_CONNECTED"
+                },
+                "name": "DEFAULT"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "nacm": {
+      "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-netconf-acm",
+      "enable-nacm": "true",
+      "read-default": "deny",
+      "write-default": "deny",
+      "exec-default": "deny",
+      "enable-external-groups": "true",
+      "rule-list": {
+        "name": "admin",
+        "group": "PRIV15",
+        "rule": {
+          "name": "permit-all",
+          "module-name": "*",
+          "access-operations": "*",
+          "action": "permit"
+        }
+      }
+    },
+    "routing": {
+      "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-routing",
+      "routing-instance": {
+        "name": "default",
+        "description": "default-vrf [read-only]",
+        "routing-protocols": {
+          "routing-protocol": {
+            "type": "static",
+            "name": "1",
+            "static-routes": {
+              "ipv4": {
+                "@xmlns": "urn:ietf:params:xml:ns:yang:ietf-ipv4-unicast-routing",
+                "route": {
+                  "destination-prefix": "0.0.0.0/0",
+                  "next-hop": {
+                    "next-hop-address": "172.16.1.254"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

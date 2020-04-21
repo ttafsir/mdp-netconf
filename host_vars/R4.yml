@@ -1,0 +1,23 @@
+---
+
+l3_interfaces:
+  config:
+    - name: loopback0
+      ipv4:
+        - address: 150.1.4.4/32
+      ipv6:
+        - address: 2001:150:4:4::4/128
+    - name: GigabitEthernet1
+      ipv4:
+      - address: 172.16.1.174/24
+    - name: GigabitEthernet2
+      ipv4:
+        - address: 169.254.100.4/24
+      ipv6:
+        - address: 2001:169:254:100::4/64
+
+
+bgp_router_id: 155.1.4.4
+bgp_networks:
+  - prefix: 155.1.4.4
+    masklen: 32

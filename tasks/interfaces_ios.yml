@@ -1,0 +1,13 @@
+---
+
+- name: configure basic interfaces
+  ios_interfaces:
+    config: "{{ interfaces.config }}"
+    state: "{{ interfaces.state }}"
+
+- name: configure l3 interfaces
+  ios_l3_interfaces:
+    config: "{{ l3_interfaces.config }}"
+    state: "merged"
+
+...

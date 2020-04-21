@@ -1,0 +1,26 @@
+---
+
+router_bgp:
+  id: 65000
+  bgp:
+    log-neighbor-changes: 'true'
+    listen:
+      limit: 10
+      range:
+        network-range: 169.254.100.0/24
+        peer-group: PG-SPOKES
+  peer-group:
+    neighbor:
+      id: "PG-SPOKES"
+      peer-group: null
+      remote-as: 65001
+  address-family:
+    no-vrf:
+      ipv4:
+        af-name: unicast
+        ipv4-unicast:
+          peer-group:
+            neighbor:
+              id: PG-SPOKES
+              activate: null
+...
