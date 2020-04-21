@@ -113,7 +113,6 @@ def main():
             'hostkey_verify': False,
             'device_params': {'name': "csr"}
         }
-        print(device)
 
         host_vars = build_hostvars(hostname)
         payload = build_xml_payload(host_vars)
@@ -122,9 +121,9 @@ def main():
             continue
 
         with manager.connect(**device) as mgr:
+            print(f'connecting to: {hostname}', end=" ")
             resp = mgr.edit_config(target='running', config=payload)
-
-
+            print(f'DONE')
 
 
 if __name__ == '__main__':

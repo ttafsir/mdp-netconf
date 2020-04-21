@@ -1,0 +1,17 @@
+---
+- name: ENABLE NETCONF
+  hosts: all
+  gather_facts: no
+
+  tasks:
+  - name: disable netconf-yang on the devices
+    ios_config:
+      lines:
+        - netconf-yang
+
+  - name: wait for netconf service to be up
+    wait_for:
+      host: "{{ ansible_host }}"
+      port: "{{ netconf_port }}"
+
+...

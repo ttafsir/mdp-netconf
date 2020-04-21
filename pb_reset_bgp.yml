@@ -1,0 +1,13 @@
+---
+
+- name: RESET BGP
+  hosts: all
+  gather_facts: no
+
+
+  tasks:
+
+    - name: reset BGP
+      ios_config:
+        lines:
+          - no router bgp {{ bgp.config.bgp_as }}

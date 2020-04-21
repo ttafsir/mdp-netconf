@@ -1,0 +1,12 @@
+---
+- name: DISABLE NETCONF
+  hosts: all
+  gather_facts: no
+
+  tasks:
+  - name: disable netconf-yang on the devices
+    ios_config:
+      lines:
+        - no netconf-yang
+
+...
