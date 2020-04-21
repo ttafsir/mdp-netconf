@@ -4,7 +4,7 @@
   gather_facts: no
 
   tasks:
-  - name: disable netconf-yang on the devices
+  - name: enable netconf-yang on the devices
     ios_config:
       lines:
         - netconf-yang

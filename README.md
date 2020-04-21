@@ -1,4 +1,23 @@
+# NETCONF on IOS-XE
+
+![image-20200421132703736](./docs/ios_xe.png)
+
+
+
+### What you'll learn
+
+* Enabling `netconf-yang` on an IOS-XE device
+* Interacting with the NETCONF service on an IOX-XE device
+
+### You'll need
+
+* Access to an IOS XE device with 16.10+ . 
+
+
+
 ## 1. Enable `netconf-yang` on IOS XE
+
+Before we can interact with a NETCONF server (network device), we must first enable the service. Follow the instructions below to enable NETCONF.
 
 #### :keyboard: Connect to NETCONF server
 
