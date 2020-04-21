@@ -1,6 +1,6 @@
 ## 1. Enable `netconf-yang` on IOS XE
 
-#### :keyboard: Connect to NETCONF server 
+#### :keyboard: Connect to NETCONF server
 
 ```sh
 ssh wwt@10.246.48.75 -p <ssh-port>
@@ -13,15 +13,15 @@ Enabling authentication with privilege level 15 access is required for NETCONF. 
 #### :keyboard: Verify that the process is disabled
 
 ```sh
-R1# show platform software yang-management process 
+R1# show platform software yang-management process
 confd            : Not Running
 nesd             : Not Running
 syncfd           : Not Running
 ncsshd           : Not Running
 dmiauthd         : Not Running
-nginx            : Running    
+nginx            : Running
 ndbmand          : Not Running
-pubd             : Running 
+pubd             : Running
 ```
 
 #### :keyboard: Enable `netconf-yang` process on the router
@@ -35,15 +35,15 @@ R1(config)# netconf-yang
 #### :keyboard: Verify the process again (takes about a minute)
 
 ```sh
-R1#show platform software yang-management process 
-confd            : Running    
-nesd             : Running    
-syncfd           : Running    
-ncsshd           : Running    
-dmiauthd         : Running    
-nginx            : Running    
-ndbmand          : Running    
-pubd             : Running    
+R1#show platform software yang-management process
+confd            : Running
+nesd             : Running
+syncfd           : Running
+ncsshd           : Running
+dmiauthd         : Running
+nginx            : Running
+ndbmand          : Running
+pubd             : Running
 ```
 
 
@@ -111,9 +111,9 @@ This will disconnect your session and return you to your terminal.
 
 ## 3. NETCONF + Python
 
-![image-20200420221849131](../docs/pytho_netconf.png)
+![image-20200420221849131](./docs/pytho_netconf.png)
 
-It is far more useful to use NETCONF to configure YANG data using python than connecting directly with SSH. To interact with YANG modules using Python, we'll use a NETCONF client for Python called `ncclient`. 
+It is far more useful to use NETCONF to configure YANG data using python than connecting directly with SSH. To interact with YANG modules using Python, we'll use a NETCONF client for Python called `ncclient`.
 
 ### What you'll build
 
@@ -126,7 +126,7 @@ It is far more useful to use NETCONF to configure YANG data using python than co
 
 ### Getting Started
 
-Before we can use YANG modules to configure a device, it is useful to first learn how they're structured. We'll use the Advanced Netconf Explorer to do just that. 
+Before we can use YANG modules to configure a device, it is useful to first learn how they're structured. We'll use the Advanced Netconf Explorer to do just that.
 
 #### :keyboard: Get Advanced Netconf Explorer (Optional)
 
@@ -154,13 +154,13 @@ docker-compose up --detach
 
 Launch the ANX GUI using http://localhost:9269 and connect to the NETCONF device.
 
-![image-20200421103036014](../docs/anx.png)
+![image-20200421103036014](./docs/anx.png)
 
 
 
 As soon as you click `login`, ANX will connect to the device and sync the YANG models with the device. Once login is completed, you will access to navigate through the YANG models that were loaded and cached from the devices. For this lab, we will mostly focus on the IOS XE native models to configure both BGP and the interface configurations. Below is an example showing the navigation to BGP modules.
 
-![image-20200421102815710](../docs/native_router_bgp.png)
+![image-20200421102815710](./docs/native_router_bgp.png)
 
 
 
@@ -169,6 +169,6 @@ As soon as you click `login`, ANX will connect to the device and sync the YANG m
 #### :keyboard: Clone this code repository
 
 ```sh
-$ git clone
+$ git clone https://github.com/ttafsir/mdp-netconf.git
 ```
 
